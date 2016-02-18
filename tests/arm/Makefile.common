@@ -1,0 +1,3 @@
+CC := arm-none-eabi-gcc
+#CFLAGS := -nostdinc
+LDFLAGS := -nostartfiles -nostdlib
