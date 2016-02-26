@@ -14,6 +14,7 @@ debug: test
 	gdb -x debug.gdb --args $(RUN_CMDLINE) -kernel $<
 
 clean:
-	rm -f test *.o
+	rm -f test *.o s2e-last 
+	rm -Rf s2e-out-*
 
 .PHONY: build clean
