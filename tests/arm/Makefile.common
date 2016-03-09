@@ -1,3 +1,4 @@
 CC := arm-none-eabi-gcc
 #CFLAGS := -nostdinc
+CFLAGS := -I../../../../guest/include/
 LDFLAGS := -nostartfiles -nostdlib
