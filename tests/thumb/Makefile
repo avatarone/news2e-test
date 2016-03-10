@@ -1,5 +1,6 @@
-SUBDIRS := arm \
-	       thumb \
+SUBDIRS := base_instructions_kill \
+
+
 
 
 .PHONY: build

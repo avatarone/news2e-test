@@ -1,0 +1,4 @@
+CC := arm-none-eabi-gcc
+#CFLAGS := -nostdinc
+CFLAGS := -I../../../../guest/include/ -mcpu=arm966e-s
+LDFLAGS := -nostartfiles -nostdlib
