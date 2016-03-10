@@ -24,8 +24,15 @@ When /^S2E test is run$/ do
     else
         @monitor = ""
     end
-    @cmd = @s2e_cmd + " -nographic -M integratorcp -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + @monitor
+    @cmd = @s2e_cmd + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + @monitor
     run(unescape(@cmd), @aruba_timeout_seconds)
+end
+
+
+When /^S2E test is run for at most (\d+) seconds$/ do |time|
+    @cmd = @s2e_dir + "/arm-s2e-softmmu/qemu-system-arm" + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin
+    @timeout = time.to_i
+    run(unescape(@cmd), @timeout)
 end
 
 When(/^S2E test is run for architecture "(.*?)"$/) do |arch|
