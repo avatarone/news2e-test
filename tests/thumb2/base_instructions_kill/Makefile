@@ -1,9 +1,11 @@
 include ../Makefile.common
 
-RUN_CMDLINE := $(S2E_DIR)/arm-s2e-softmmu/qemu-system-arm -M versatilepb -s2e-config-file s2e_conf.lua -nographic -monitor /dev/null
+RUN_CMDLINE := $(QEMU_ARM) -M versatilepb -s2e-config-file s2e_conf.lua -nographic -monitor /dev/null
 
 
-test: test.o
+test: test.o start.o
+
+%.o: CFLAGS += -mthumb
 
 all build: test
 

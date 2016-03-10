@@ -1,0 +1,4 @@
+CC := arm-none-eabi-gcc
+#CFLAGS := -nostdinc
+CFLAGS := -I../../../../guest/include/ -mcpu=cortex-m3
+LDFLAGS := -nostartfiles -nostdlib
