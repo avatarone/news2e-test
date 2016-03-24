@@ -7,7 +7,9 @@ s2e = {
 
 plugins = {
     -- BaseInstructions handles custom S2E opcodes in the guest code
-    "TestOnTranslationBlockStart"
+    "BaseInstructions",
+    -- TestOnTranslationBlockStartPlugin prints a message each time the signal is received
+    "TestOnTranslationBlockStartPlugin"
 }
 
 pluginsConfig = {
