@@ -1,7 +1,8 @@
 SUBDIRS := hello_world \
-	       tight_loop \
-		   base_instructions_kill \
-		   load_memory
+	   tight_loop \
+           base_instructions_kill \
+           load_memory \
+           on_tb_start_event
 
 
 
