@@ -2,10 +2,10 @@ SUBDIRS := hello_world \
 	   tight_loop \
            base_instructions_kill \
            load_memory \
-           on_tb_start_event \
-           on_tb_end_event \
-           on_insn_start_event \
-           on_insn_end_event
+           on_translate_tb_start_event \
+           on_translate_tb_end_event \
+           on_translate_insn_start_event \
+           on_translate_insn_end_event
 
 
 
