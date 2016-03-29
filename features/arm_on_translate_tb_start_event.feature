@@ -8,4 +8,4 @@ Feature: Check that the OnTranslateBlockStart signal is fired
 
 
     Scenario: Check output for messages that the OnTranslateBlockStart signal was fired
-        Then the stderr should contain "OnTranslationBlockStart called at pc "
+        Then the stderr should contain "OnTranslateBlockStart called at pc "

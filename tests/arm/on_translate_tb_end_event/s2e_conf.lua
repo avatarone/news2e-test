@@ -13,6 +13,6 @@ plugins = {
 }
 
 pluginsConfig = {
-    TestOnTranslateBlockEnd = {
+    TestOnTranslateBlockEndPlugin = {
     }
 }
