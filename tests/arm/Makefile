@@ -4,7 +4,8 @@ SUBDIRS := hello_world \
            load_memory \
            on_tb_start_event \
            on_tb_end_event \
-           on_insn_start_event
+           on_insn_start_event \
+           on_insn_end_event
 
 
 
