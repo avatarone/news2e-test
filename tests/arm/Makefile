@@ -6,7 +6,8 @@ SUBDIRS := hello_world \
            on_translate_tb_end_event \
            on_translate_insn_start_event \
            on_translate_insn_end_event \
-           on_exec_tb_start_event
+           on_exec_tb_start_event \
+           on_exec_tb_end_event
 
 
 
