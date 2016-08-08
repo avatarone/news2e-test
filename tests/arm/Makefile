@@ -10,7 +10,8 @@ SUBDIRS := hello_world \
            on_exec_tb_end_event \
            on_exec_insn_start_event \
            on_exec_insn_end_event \
-		   symbolic_value
+		   symbolic_value \
+		   concolic_value
 
 
 
