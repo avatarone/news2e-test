@@ -18,19 +18,23 @@ Given(/^ARM firmware named "(.*?)"$/) do |fw|
     check_file_presence([@luacfg], true)
 end
 
+Given(/^extra command line arguments "(.*?)"$/) do |args|
+   @extra_cmdline_args = args
+end
+
 When /^S2E test is run$/ do
     if system "test $(uname) != \"Darwin\""
 	@monitor = " -monitor /dev/null"
     else
         @monitor = ""
     end
-    @cmd = @s2e_cmd + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + @monitor
+    @cmd = @s2e_cmd + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + @monitor + " " + @extra_cmdline_args
     run(unescape(@cmd), @aruba_timeout_seconds)
 end
 
 
 When /^S2E test is run for at most (\d+) seconds$/ do |time|
-    @cmd = @s2e_dir + "/arm-s2e-softmmu/qemu-system-arm" + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin
+    @cmd = @s2e_dir + "/arm-s2e-softmmu/qemu-system-arm" + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + " " + @extra_cmdline_args
     @timeout = time.to_i
     run(unescape(@cmd), @timeout)
 end
