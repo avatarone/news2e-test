@@ -34,7 +34,7 @@ end
 
 
 When /^S2E test is run for at most (\d+) seconds$/ do |time|
-    @cmd = @s2e_dir + "/arm-s2e-softmmu/qemu-system-arm" + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + " " + @extra_cmdline_args
+    @cmd = @s2e_dir + "/arm-s2e-softmmu/qemu-system-arm" + " -nographic -monitor /dev/null -M versatilepb -cpu cortex-a8 -m 4M -s2e-config-file " + @luacfg + " -s2e-verbose -kernel " + @bin + " " + (@extra_cmdline_args || "")
     @timeout = time.to_i
     run(unescape(@cmd), @timeout)
 end
