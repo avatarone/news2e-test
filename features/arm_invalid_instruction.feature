@@ -11,5 +11,4 @@ Feature: When running in symbolic (KLEE) mode, check that an invalid instruction
 
     Scenario: Check output that S2E was indeed running, always executing TBs in KLEE,
               and that the invalid instruction handler is correctly invoked.
-        Then the stdout should contain "Running in KLEE (symbolic mode)"
-        And the stdout should contain "Caught undefined instruction"
+        Then the stdout should contain "Caught undefined instruction"
