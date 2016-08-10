@@ -33,14 +33,6 @@ __attribute__((naked,noreturn)) static void _handle_invalid_instruction(void)
 
 void main(void) 
 {
-    /* Check if we're running in KLEE */
-    if (s2e_is_running_symbolic()) {
-        s2e_message("Running in KLEE (symbolic mode)");
-    }
-    else {
-        s2e_message("Running in Qemu (concrete mode)");
-    }
-
     /* Setup undefined instruction handler */
     *((uint32_t *) 0x8) = 0xe59ff018; /* ldr pc, [pc, 0x18] */
     *((uint32_t *) 0x28) = (uint32_t) _handle_invalid_instruction;

@@ -11,7 +11,7 @@ run: test
 	$(RUN_CMDLINE) -kernel $<
 
 debug: test
-	gdb -x debug.gdb --args $(RUN_CMDLINE) -kernel $<
+	gdb -ex run --args $(RUN_CMDLINE) -kernel $<
 
 clean:
 	rm -f test *.o s2e-last 

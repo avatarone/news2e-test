@@ -2,6 +2,7 @@
 
 s2e = {
     kleeArgs = {
+        "-use-concolic-execution=false",
     }
 }
 
